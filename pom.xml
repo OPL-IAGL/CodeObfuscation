@@ -14,6 +14,48 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+	<build>
+		<plugins>
+			<plugin>
+			  <groupId>fr.inria.gforge.spoon</groupId>
+			  <artifactId>spoon-maven-plugin</artifactId>
+			  <version>2.1</version>
+			  <executions>
+			    <execution>
+			      <phase>generate-sources</phase>
+			      <goals>
+			        <goal>generate</goal>
+			      </goals>
+			    </execution>
+			  </executions>
+			  <configuration>
+				<srcFolder>/Users/slimane/Documents/master2/CAL/CodeObfuscationProjectTest/src
+				</srcFolder>
+				<outFolder>/Users/slimane/Documents/master2/CAL/CodeObfuscationProjectTest/spooned</outFolder>
+				<processors>
+					<processor>opl.codeObfuscation.ClassProcessor</processor>
+				</processors>
+			</configuration>
+			<dependencies>
+				<dependency>
+					<groupId>fr.inria.gforge.spoon</groupId>
+					<artifactId>spoon-core</artifactId>
+					<version>4.3.0</version>
+				</dependency>
+				<dependency>
+					<groupId>fr.inria.gforge.spoon</groupId>
+					<artifactId>spoon-processors</artifactId>
+					<version>1.0-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>fr.inria.gforge.spoon</groupId>
+					<artifactId>spoon-maven-plugin</artifactId>
+					<version>2.1</version>
+				</dependency>
+			</dependencies>
+			</plugin>
+		</plugins>
+	</build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,5 +68,11 @@
       <artifactId>spoon-core</artifactId>
       <version>4.3.0</version>
     </dependency>
+    <dependency>
+	  <groupId>fr.inria.gforge.spoon</groupId>
+	  <artifactId>spoon-maven-plugin</artifactId>
+	  <version>2.1</version>
+	</dependency>
   </dependencies>
+  
 </project>
